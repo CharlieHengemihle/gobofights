@@ -21,15 +21,58 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/global.css" />
     <!-- add link for page specific css -->
-
+    <link rel="stylesheet" href="styles/roachy.css" />
+    
 </head>
 
 <body>
+    <style>
+        body {
+    background-image: url("assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    </style>
     <header>
     </header>
-    <img src="" alt="">
+    <!-- <img src="assets/background.png" alt="Desolation"> -->
 
     <main>
+        <section class="banner" id="score">Roachy craves irradiated blood</section>
+        <section class="banner" id="results">Click on Roachy's next victim</section>
+        <section class="roachy">
+            <p id="roachy-hp" class="stat">20</p>
+            <img id = 'rad' src="assets/roachy.png" alt="roachy-pic">
+        </section>
+        <section class="opponent">
+            <form id="add-opponent-form">
+                <label>
+                    <div>New Opponent</div>
+                    <div class="controls">
+                        <input type="name" required>
+                        <button>+</button>
+                    </div>
+                </label>
+            </form>
+            <ul id="opponent list">
+                <li class="opp-card">
+                <span class="stat">5</span>
+                <img class='opp-image' src="assets/scorpion.png" alt="scorpion">
+                <span class="name">Stabby</span>
+                </li>
+                <li class="opp-card">
+                <span class="stat">3</span>
+                <img class='opp-image' src="assets/crab.png" alt="crab">
+                <span class="name">Sheldon</span>
+                </li>
+                <li class="opp-card">
+                <span class="stat">6</span>
+                <img class='opp-image' src="assets/skeeter.png" alt="mosquito">
+                <span class="name">Skeeter</span>
+                </li>
+            </ul>
+            <button id="sweep">Remove Fallen Enemies</button>
+        </section>
 
     </main>
 

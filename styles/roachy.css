@@ -1,0 +1,112 @@
+/* body {
+    background-image: url("background.png");
+    background-size: cover;
+} */
+
+/* body {
+    background-image: url("assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+main {
+    display: grid;
+    grid-template-rows: 75px 75px 1fr;
+    grid-template-areas: 
+    'score score'
+    'result result'
+    'roachy opponent';
+    justify-content: space-around;
+}
+
+.banner {
+    display: grid;
+    grid-template-rows: 75px 75px;
+    width: max;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    font-weight: 700;
+}
+
+#score {
+    grid-area: score;
+    font-size: xxx-large;
+    background-color: black;
+    text-shadow: 2px 2px 5px red;
+    color:rgb(80, 77, 77) ;
+    text-align: center;
+
+    /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;; */
+}
+
+.roachy {
+    display: grid;
+    grid-area: roachy;
+    background-color: rgba(3, 180, 121, 50%);
+    width: 460px;
+    height: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: space-evenly;
+}
+
+#rad {
+    height: 300px;
+}
+
+.opp-card {
+    grid-area: opp;
+    display:grid;
+    height: fit-content;
+    width: 200px;
+    background-color: rgba(114, 4, 4, 50%);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+
+
+}
+.stat {
+    font-size:25px;
+    background-color: rgb(121, 198, 4);
+    padding: 2px;
+    text-align: center;
+
+}
+.opponent{
+    grid-area: opponent;
+    /*  display: grid; */
+    /* grid-template-rows: 15px, 1fr, 15px;
+    grid-area: 
+    'new'
+    'opp' 
+    'sweep'; */
+}
+.name {
+    font-size:25px;
+    background-color: rgb(121, 198, 4);
+    
+}
+#add-opponent-form{
+    grid-area: new;
+}
+
+#sweep {
+    grid-area: sweep;
+    margin-left:25px;
+    margin-right:auto;
+}
+
+/* img {
+} */
+.opp-image {
+    height: 150px;
+}
+#results {
+    grid-area: result;
+    font-size: xx-large;
+    background-color: red;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    text-align: center;
+}
