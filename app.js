@@ -1,5 +1,6 @@
 /* Imports */
-
+import { getRandomItem } from "./export.js";
+import { renderOpp } from "./export.js";
 /* Get DOM Elements */
 const scoreboard = document.getElementById('score');
 const results = document.getElementById('results');
@@ -12,7 +13,7 @@ const sweepButton = document.getElementById('sweep');
 
 /* State */
 let player = {
-    hp: 0,
+    hp: 20,
     // type: roach,
 };
 
@@ -34,7 +35,7 @@ let opponents = [
     
     {
         name: 'Skeeter',
-        type: 'blood bug',
+        type: 'blood-bug',
         hp: 2,
     },
 ];
@@ -48,7 +49,7 @@ const crab = {
     hp: 4,
 };
 const bloodBug = {
-    type: 'blood bug',
+    type: 'blood-bug',
     hp: 2,
 };
 const rat = {
@@ -62,15 +63,35 @@ const ant = {
 
 const roachHit = [0,1,1,1,2,2,3,3,3,3,4];
 const oppHit = [0,0,0,0,1,1,1,2,2];
-const oppType = [ant, ant, ant, rat, rat, bloodBug, bloodBug, crab, crab, crab, scorpion, scorpion];
+const oppTypes = [ant, ant, ant, rat, rat, bloodBug, bloodBug, crab, crab, crab, scorpion, scorpion];
 
 /* Events */
+newOpponent.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(newOpponent);
+    const oppType = getRandomItem(oppTypes);
+
+    const opponent = {
+        name: formData.get('name'),
+        type: oppType.type,
+        hp: oppType.hp,
+    };
+    opponents.push(opponent);
+
+    result = `${opponent.name} the ${opponent.type} is here for violence!`;
+
+    displayOpponents();
+    displayResult();
+
+    newOpponent.reset(); 
+});
+
 function displayResult() {
     results.textContent = result;
 }
 
 function displayScoreboard() {
-    scoreboard.textContent = "You've squashed ${squashed} opponents. Pam will come back soon!";
+    scoreboard.textContent = `You've squashed ${squashed} opponents. Pam will come back soon!`;
 }
 
 function displayRoachy() {
@@ -85,7 +106,17 @@ function displayRoachy() {
 function displayOpponents() {
     oppList.innerHTML = '';
 
+    for (const opponent of opponents) {
+        const opponentEl = renderOpp(opponent);
+        oppList.append(opponentEl);
+
+        // opponentEl.addEventListener('click')
+    }
+
+
 }
 /* Display Functions */
 displayRoachy();
+displayScoreboard();
+displayResult();
 // (don't forget to call any display functions you want to run on page load!)

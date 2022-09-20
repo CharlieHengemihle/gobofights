@@ -11,7 +11,7 @@
 
 main {
     display: grid;
-    grid-template-rows: 75px 75px 1fr;
+    grid-template-rows: 125px 75px 1fr;
     grid-template-areas: 
     'score score'
     'result result'
@@ -21,10 +21,11 @@ main {
 
 .banner {
     display: grid;
-    grid-template-rows: 75px 75px;
+    grid-template-rows: 1fr, 1fr;
     width: max;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
     font-weight: 700;
+    min-height: fit-content;
 }
 
 #score {
@@ -89,7 +90,9 @@ main {
     
 }
 #add-opponent-form{
-    grid-area: new;
+    /* grid-area: new; */
+    background-color: brown;
+    width:fit-content
 }
 
 #sweep {
