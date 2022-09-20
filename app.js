@@ -26,18 +26,6 @@ let opponents = [
         type: 'scorpion',
         hp: 3,
     },
-    
-    {
-        name: 'Sheldon',
-        type: 'crab',
-        hp: 4,
-    },
-    
-    {
-        name: 'Skeeter',
-        type: 'blood-bug',
-        hp: 2,
-    },
 ];
 
 const scorpion = {
@@ -86,12 +74,23 @@ newOpponent.addEventListener('submit', (e) => {
     newOpponent.reset(); 
 });
 
+sweepButton.addEventListener('click', () => {
+    const alive = [];
+    for (const opponent of opponents) {
+        if (opponent.hp > 0) {
+            alive.push(opponent);
+        }
+    }
+    opponents = alive;
+    displayOpponents();
+});
+
 function displayResult() {
     results.textContent = result;
 }
 
 function displayScoreboard() {
-    scoreboard.textContent = `You've squashed ${squashed} opponents. Pam will come back soon!`;
+    scoreboard.textContent = `You've squashed ${defeated} opponents. Pam will come back soon!`;
 }
 
 function displayRoachy() {
@@ -137,13 +136,11 @@ function displayOpponents() {
             if (opponent.hp < 1) {
                 defeated++;
                 displayScoreboard();
+                displayOpponents();
             }
             displayResult();
             displayRoachy();
-            displayOpponents();
         })
-
-        // opponentEl.addEventListener('click')
     }
 
 
