@@ -110,6 +110,39 @@ function displayOpponents() {
         const opponentEl = renderOpp(opponent);
         oppList.append(opponentEl);
 
+        opponentEl.addEventListener('click', () => {
+            if (opponent.hp < 1) {
+                result = `You're wasting your energy on that one, Roachy.`;
+                displayResult();
+                return;
+            }
+            const roachAttack = getRandomItem(roachHit);
+            const oppAttack = getRandomItem(oppHit);
+
+            player.hp = Math.max(0, player.hp - oppAttack);
+            opponent.hp = Math.max(0, opponent.hp - roachAttack);
+
+            result = '';
+            if (roachAttack === 0) {
+                result += 'Whiffed it, bud.';
+            } else {
+                result += `Bonked ${opponent.name} and did ${roachAttack} damage!`;
+            }
+
+            if (oppAttack === 0) {
+                result += `You dodged ${opponent.name}. Smooth moves Roachy!`;
+            }else{
+                result += `Watch out! ${opponent.name} got you for ${oppAttack} damage.`;
+            }
+            if (opponent.hp < 1) {
+                defeated++;
+                displayScoreboard();
+            }
+            displayResult();
+            displayRoachy();
+            displayOpponents();
+        })
+
         // opponentEl.addEventListener('click')
     }
 
@@ -119,4 +152,5 @@ function displayOpponents() {
 displayRoachy();
 displayScoreboard();
 displayResult();
+displayOpponents();
 // (don't forget to call any display functions you want to run on page load!)

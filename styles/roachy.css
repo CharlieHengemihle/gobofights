@@ -11,7 +11,7 @@
 
 main {
     display: grid;
-    grid-template-rows: 125px 75px 1fr;
+    grid-template-rows:min-content, 1fr;
     grid-template-areas: 
     'score score'
     'result result'
@@ -25,7 +25,7 @@ main {
     width: max;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
     font-weight: 700;
-    min-height: fit-content;
+    height: fit-content;
 }
 
 #score {
