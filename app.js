@@ -56,8 +56,8 @@ const ant = {
     hp: 2,
 };
 
-const roachHit = [0,1,1,1,2,2,3,3,3,3,4];
-const oppHit = [0,0,0,0,1,1,1,2,2];
+const roachHit = [0, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4];
+const oppHit = [0, 0, 0, 0, 1, 1, 1, 2, 2];
 const oppTypes = [ant, ant, ant, rat, rat, bloodBug, bloodBug, crab, crab, crab, scorpion, scorpion];
 
 /* Events */
@@ -91,21 +91,21 @@ sweepButton.addEventListener('click', () => {
     opponents = alive;
     displayOpponents();
 });
-        
+
 function displayResult() {
     results.textContent = result;
 }
 
 function displayScoreboard() {
     if (player.hp > 0){
-    scoreboard.textContent = `You've squashed ${defeated} opponents. Pam will come back soon!`;
-    } else {scoreboard.textContent = 'Final Pam can never die!!!'}
+        scoreboard.textContent = `You've squashed ${defeated} opponents. Pam will come back soon!`;
+    } else {scoreboard.textContent = 'Final Pam can never die!!!'};
 }
 
 function displayRoachy() {
     roachyHP.textContent = Math.max(0, player.hp);
     if (player.hp < 1) {
-        roachyPic.src = 'assets/FinalPam.png'
+        roachyPic.src = 'assets/FinalPam.png';
     } else {
         roachyPic.src = 'assets/roachy.png';
     }
@@ -134,7 +134,7 @@ function displayOpponents() {
 
             if (roachyHP < 1) {
                 result += "Pam's Here! ";
-                roachyPic.src = 'assets/FinalPam.png'
+                roachyPic.src = 'assets/FinalPam.png';
             }
 
             if (roachAttack === 0) {
@@ -145,7 +145,7 @@ function displayOpponents() {
 
             if (oppAttack === 0) {
                 result += `You dodged ${opponent.name}. Smooth moves Roachy! `;
-            }else{
+            } else {
                 result += `Watch out! ${opponent.name} got you for ${oppAttack} damage. `;
             }
             if (opponent.hp < 1) {
@@ -157,7 +157,7 @@ function displayOpponents() {
             displayResult();
             displayRoachy();
             displayOpponents();
-        })
+        });
     }
 }
 /* Display Functions */
