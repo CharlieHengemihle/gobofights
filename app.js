@@ -99,7 +99,7 @@ function displayResult() {
 function displayScoreboard() {
     if (player.hp > 0){
         scoreboard.textContent = `You've squashed ${defeated} opponents. Pam will come back soon!`;
-    } else {scoreboard.textContent = 'Final Pam can never die!!!'};
+    } else {scoreboard.textContent = 'Final Pam can never die!!!';}
 }
 
 function displayRoachy() {
