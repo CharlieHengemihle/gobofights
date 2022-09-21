@@ -1,6 +1,6 @@
 /* Imports */
-import { getRandomItem } from "./export.js";
-import { renderOpp } from "./export.js";
+import { getRandomItem } from './export.js';
+import { renderOpp } from './export.js';
 /* Get DOM Elements */
 const scoreboard = document.getElementById('score');
 const results = document.getElementById('results');
@@ -26,6 +26,13 @@ let opponents = [
         type: 'scorpion',
         hp: 3,
     },
+    
+    {
+        name: 'Jarf',
+        type: 'crab',
+        hp: 6,
+    },
+    
 ];
 
 const scorpion = {
@@ -34,7 +41,7 @@ const scorpion = {
 };
 const crab = {
     type: 'crab',
-    hp: 4,
+    hp: 6,
 };
 const bloodBug = {
     type: 'blood-bug',
@@ -42,7 +49,7 @@ const bloodBug = {
 };
 const rat = {
     type: 'rat',
-    hp: 2,
+    hp: 3, 
 };
 const ant = {
     type: 'ant',
@@ -84,7 +91,7 @@ sweepButton.addEventListener('click', () => {
     opponents = alive;
     displayOpponents();
 });
-
+        
 function displayResult() {
     results.textContent = result;
 }
@@ -152,8 +159,6 @@ function displayOpponents() {
             displayOpponents();
         })
     }
-
-
 }
 /* Display Functions */
 displayRoachy();
