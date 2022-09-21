@@ -13,7 +13,7 @@ const sweepButton = document.getElementById('sweep');
 
 /* State */
 let player = {
-    hp: 20,
+    hp: 2,
     // type: roach,
 };
 
@@ -90,13 +90,15 @@ function displayResult() {
 }
 
 function displayScoreboard() {
+    if (player.hp > 0){
     scoreboard.textContent = `You've squashed ${defeated} opponents. Pam will come back soon!`;
+    } else {scoreboard.textContent = 'Final Pam can never die!!!'}
 }
 
 function displayRoachy() {
     roachyHP.textContent = Math.max(0, player.hp);
     if (player.hp < 1) {
-        roachyPic.src = 'assets/deadRoachy.png'
+        roachyPic.src = 'assets/FinalPam.png'
     } else {
         roachyPic.src = 'assets/roachy.png';
     }
@@ -117,29 +119,37 @@ function displayOpponents() {
             }
             const roachAttack = getRandomItem(roachHit);
             const oppAttack = getRandomItem(oppHit);
-
+            
             player.hp = Math.max(0, player.hp - oppAttack);
             opponent.hp = Math.max(0, opponent.hp - roachAttack);
-
+            
             result = '';
+
+            if (roachyHP < 1) {
+                result += "Pam's Here! ";
+                roachyPic.src = 'assets/FinalPam.png'
+            }
+
             if (roachAttack === 0) {
-                result += 'Whiffed it, bud.';
+                result += 'Whiffed it, bud. ';
             } else {
-                result += `Bonked ${opponent.name} and did ${roachAttack} damage!`;
+                result += `Bonked ${opponent.name} and did ${roachAttack} damage! `;
             }
 
             if (oppAttack === 0) {
-                result += `You dodged ${opponent.name}. Smooth moves Roachy!`;
+                result += `You dodged ${opponent.name}. Smooth moves Roachy! `;
             }else{
-                result += `Watch out! ${opponent.name} got you for ${oppAttack} damage.`;
+                result += `Watch out! ${opponent.name} got you for ${oppAttack} damage. `;
             }
             if (opponent.hp < 1) {
                 defeated++;
                 displayScoreboard();
                 displayOpponents();
             }
+
             displayResult();
             displayRoachy();
+            displayOpponents();
         })
     }
 
