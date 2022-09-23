@@ -18,7 +18,7 @@ export function renderOpp(opponent) {
 
     const image = document.createElement('img');
     image.alt = opponent.type;
-    image.classList.add('opp-image')
+    image.classList.add('opp-image');
     if (opponent.hp < 1) {
         image.src = `assets/splat.png`;
     } else {
