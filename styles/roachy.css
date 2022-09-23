@@ -1,0 +1,135 @@
+/* body {
+    background-image: url("background.png");
+    background-size: cover;
+} */
+
+/* body {
+    background-image: url("assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+main {
+    display: grid;
+    grid-template-rows:min-content, 1fr;
+    grid-template-areas: 
+    'score score'
+    'result result'
+    'roachy opponent';
+    justify-content: space-around;
+}
+
+.banner {
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
+    width: max;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    font-weight: 700;
+    height: fit-content;
+}
+
+#score {
+    grid-area: score;
+    font-size: xxx-large;
+    background-color: rgba(19, 18, 18, 60%);
+    text-shadow: 2px 2px 5px red;
+    color:rgb(131, 126, 126) ;
+    text-align: center;
+
+    /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;; */
+}
+
+#logo {
+    height: 75px;
+    width: 75ps;
+}
+
+.roachy {
+    display: grid;
+    grid-area: roachy;
+    background-color: rgba(3, 180, 121, 50%);
+    width: 360px;
+    height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: space-evenly;
+}
+
+#rad {
+    height: 250px;
+}
+
+.opp-card {
+    grid-area: opponent;
+    display:flexbox;
+    max-height: min-content;
+    width: min-content;
+    background-color: rgba(114, 4, 4, 50%);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+
+
+}
+li {
+    grid-area: opponent;
+    display:flexbox;
+    max-height: min-content;
+    width: min-content;
+    background-color: rgba(114, 4, 4, 50%);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+
+
+}
+.stat {
+    font-size:25px;
+    background-color: rgb(121, 198, 4);
+    padding: 2px;
+    text-align: center;
+
+}
+.opponent{
+    grid-area: opponent;
+    /*  display: grid; */
+    /* grid-template-rows: 15px, 1fr, 15px;
+    grid-area: 
+    'new'
+    'opp' 
+    'sweep'; */
+}
+.name {
+    font-size:25px;
+    background-color: rgb(121, 198, 4);
+    
+}
+#add-opponent-form{
+    /* grid-area: new; */
+    background-color: brown;
+    width:fit-content
+}
+
+#sweep {
+    grid-area: sweep;
+    margin-left:25px;
+    margin-right:auto;
+}
+
+/* img {
+} */
+.opp-image {
+    height: 100px;
+    width: 100px;
+}
+#results {
+    grid-area: result;
+    font-size: xx-large;
+    background-color: rgba(243, 6, 6, 50%);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    text-align: center;
+}

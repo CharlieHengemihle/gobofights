@@ -21,16 +21,47 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/global.css" />
     <!-- add link for page specific css -->
-
+    <link rel="stylesheet" href="styles/roachy.css" />
+    
 </head>
 
 <body>
+    <style>
+        body {
+    background-image: url("assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    </style>
     <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
+        <img src="assets/logo.png" alt="lil roach" id="logo"/>
+
+        To Learn more about Final Pam and Roachy's adventures visit <a href="https://youtu.be/_1jGnFt78H8">The Monster Factory!</a>
     </header>
+    <!-- <img src="assets/background.png" alt="Desolation"> -->
 
     <main>
+        <section class="banner" id="score">Roachy craves irradiated blood</section>
+        <section class="banner" id="results">Click on Roachy's next victim</section>
+        <section class="roachy">
+            <p id="roachy-hp" class="stat">20</p>
+            <img id = 'rad' src="assets/roachy.png" alt="roachy-pic">
+        </section>
+        <section class="opponent">
+            <form id="add-opponent-form">
+                <label>
+                    <div>New Opponent</div>
+                    <div class="controls">
+                        <input name="name" required>
+                        <button>+</button>
+                    </div>
+                </label>
+            </form>
+            <ul id="opponent-list">
+
+            </ul>
+            <button id="sweep">Remove Fallen Enemies</button>
+        </section>
 
     </main>
 
