@@ -31,30 +31,49 @@ main {
 #score {
     grid-area: score;
     font-size: xxx-large;
-    background-color: black;
+    background-color: rgba(19, 18, 18, 60%);
     text-shadow: 2px 2px 5px red;
-    color:rgb(80, 77, 77) ;
+    color:rgb(131, 126, 126) ;
     text-align: center;
 
     /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;; */
+}
+
+#logo {
+    height: 75px;
+    width: 75ps;
 }
 
 .roachy {
     display: grid;
     grid-area: roachy;
     background-color: rgba(3, 180, 121, 50%);
-    width: 460px;
-    height: 400px;
+    width: 360px;
+    height: 300px;
     margin-top: auto;
     margin-bottom: auto;
     justify-content: space-evenly;
 }
 
 #rad {
-    height: 300px;
+    height: 250px;
 }
 
 .opp-card {
+    grid-area: opponent;
+    display:flexbox;
+    max-height: min-content;
+    width: min-content;
+    background-color: rgba(114, 4, 4, 50%);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+
+
+}
+li {
     grid-area: opponent;
     display:flexbox;
     max-height: min-content;
@@ -104,13 +123,13 @@ main {
 /* img {
 } */
 .opp-image {
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
 }
 #results {
     grid-area: result;
     font-size: xx-large;
-    background-color: red;
+    background-color: rgba(243, 6, 6, 50%);
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
     text-align: center;
 }

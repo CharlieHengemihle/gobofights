@@ -7,13 +7,13 @@ const results = document.getElementById('results');
 const roachyHP = document.getElementById('roachy-hp');
 const roachyPic = document.getElementById('rad');
 const newOpponent = document.getElementById('add-opponent-form');
-const oppList = document.getElementById('opponent list');
+const oppList = document.getElementById('opponent-list');
 const sweepButton = document.getElementById('sweep');
 
 
 /* State */
 let player = {
-    hp: 2,
+    hp: 20,
     // type: roach,
 };
 
